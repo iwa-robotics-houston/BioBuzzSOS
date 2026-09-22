@@ -53,7 +53,7 @@ import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 @Disabled
 @TeleOp(name = "BioBuzz StarterBot Teleop", group = "StarterBot")
 //@Disabled
-public class GoBilda extends OpMode {
+public class GoBildaExample extends OpMode {
 
     // Declare OpMode members.
     private DcMotor leftDrive = null;
