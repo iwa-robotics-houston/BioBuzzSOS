@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Mechanisms.Intake;
+import org.firstinspires.ftc.teamcode.Mechanisms.Launcher;
 import org.firstinspires.ftc.teamcode.Mechanisms.MecanumDrive;
 
 @TeleOp(name = "MainTeleOp", group = "LinearOpMode")
@@ -16,6 +17,9 @@ public class MainTeleOp extends LinearOpMode {
 
         Intake intake = new Intake();
         intake.init(hardwareMap);
+
+        Launcher launcher = new Launcher();
+        launcher.init(hardwareMap);
 
         Controls controls = new Controls(gamepad1, gamepad2);
 
@@ -39,7 +43,10 @@ public class MainTeleOp extends LinearOpMode {
                 intake.stop();
             }
 
+            boolean launcherReady = launcher.update(controls.getLaunch());
+
             telemetry.addData("Status", "Running");
+            telemetry.addData("Launcher", "%.0f ticks/s, ready=%b", launcher.getVelocity(), launcherReady);
             telemetry.update();
         }
     }

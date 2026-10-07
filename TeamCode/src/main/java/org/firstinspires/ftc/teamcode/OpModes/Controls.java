@@ -19,4 +19,8 @@ public class Controls {
     // Intake Controls
     public boolean getIntake()  { return gamepad1.left_trigger > 0.1; }
     public boolean getRelease() { return gamepad1.left_bumper; }
+
+    // Launch Controls
+    public boolean getLaunch() { return gamepad1.right_bumper; }
+
 }
