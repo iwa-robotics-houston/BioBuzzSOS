@@ -18,8 +18,8 @@ public class MainTeleOp extends LinearOpMode {
         Intake intake = new Intake();
         intake.init(hardwareMap);
 
-        Launcher launcher = new Launcher();
-        launcher.init(hardwareMap);
+        // Launcher launcher = new Launcher();
+        // launcher.init(hardwareMap);
 
         Controls controls = new Controls(gamepad1, gamepad2);
 
@@ -43,11 +43,13 @@ public class MainTeleOp extends LinearOpMode {
                 intake.stop();
             }
 
+
+            /*
             boolean launcherReady = launcher.update(controls.getLaunch());
 
             telemetry.addData("Status", "Running");
             telemetry.addData("Launcher", "%.0f ticks/s, ready=%b", launcher.getVelocity(), launcherReady);
-            telemetry.update();
+            telemetry.update(); */
         }
     }
 }

@@ -19,18 +19,19 @@ public class Intake {
         /* Like the drive motors, the two side servos are mounted facing opposite
         directions, so one needs its spin reversed for both to roll inward together.*/
         rightIntakeServo.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftIntakeServo.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     /* Runs the primary intake and both side rollers inward, pulling balls in. */
     public void intake(){
-        primaryIntakeMotor.setPower(-1.0);
+        primaryIntakeMotor.setPower(1.0);
         leftIntakeServo.setPower(1.0);
         rightIntakeServo.setPower(1.0);
     }
 
     /* Reverses everything to eject balls back out. */
     public void release(){
-        primaryIntakeMotor.setPower(1.0);
+        primaryIntakeMotor.setPower(-1.0);
         leftIntakeServo.setPower(-1.0);
         rightIntakeServo.setPower(-1.0);
     }
