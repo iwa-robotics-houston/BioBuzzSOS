@@ -24,16 +24,16 @@ public class Intake {
 
     /* Runs the primary intake and both side rollers inward, pulling balls in. */
     public void intake(){
-        primaryIntakeMotor.setPower(1.0);
-        leftIntakeServo.setPower(1.0);
-        rightIntakeServo.setPower(1.0);
+        primaryIntakeMotor.setPower(-1.0);
+        leftIntakeServo.setPower(-1.0);
+        rightIntakeServo.setPower(-1.0);
     }
 
     /* Reverses everything to eject balls back out. */
     public void release(){
-        primaryIntakeMotor.setPower(-1.0);
-        leftIntakeServo.setPower(-1.0);
-        rightIntakeServo.setPower(-1.0);
+        primaryIntakeMotor.setPower(1.0);
+        leftIntakeServo.setPower(1.0);
+        rightIntakeServo.setPower(1.0);
     }
 
     /* Stops all intake hardware. */
