@@ -17,10 +17,14 @@ public class Controls {
     public double getRotate()  { return  gamepad1.right_stick_x; }
 
     // Intake Controls
-    public boolean getIntake()  { return gamepad1.left_bumper; }
-    public boolean getRelease() { return gamepad1.left_trigger > 0.1; }
+    public boolean getIntake()  { return gamepad1.left_trigger > 0.1; }
+    public boolean getRelease() { return gamepad1.left_bumper; }
 
     // Launch Controls
-    public boolean getLaunch() { return gamepad1.right_bumper; }
+    public boolean getLaunch()  { return gamepad1.right_trigger > 0.1; }
+    public boolean getSpitOut() { return gamepad1.right_bumper; }
 
+    // Passthrough Controls
+    public boolean getPassthroughIn()  { return gamepad1.a; }
+    public boolean getPassthroughOut() { return gamepad1.b; }
 }
