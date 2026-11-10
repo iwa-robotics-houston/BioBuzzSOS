@@ -25,7 +25,7 @@ public class Launcher {
     // just enough to clear it. Tune on-robot.
     public static final double SPIT_VELOCITY = -600;
 
-    // PIDF tuned for a flywheel. Tune these on your robot.
+    // PIDF tuned for a flywheel. Tune these .
     public static final double P = 40;
     public static final double I = 0;
     public static final double D = 0;

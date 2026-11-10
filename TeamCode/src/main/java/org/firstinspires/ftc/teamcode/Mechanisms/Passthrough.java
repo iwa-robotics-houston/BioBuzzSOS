@@ -21,7 +21,7 @@ public class Passthrough {
         passthroughMotor.setPower(-1.0);
     }
 
-    /* Stops the passthrough motor. */
+    // Stops the passthrough motor.
     public void stop(){
         passthroughMotor.setPower(0);
     }

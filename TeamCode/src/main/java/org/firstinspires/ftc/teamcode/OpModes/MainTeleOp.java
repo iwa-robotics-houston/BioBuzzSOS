@@ -47,13 +47,23 @@ public class MainTeleOp extends LinearOpMode {
                 intake.stop();
             }
 
+            if (controls.getLaunch()) {
+                launcher.spinUp();
+            } else {
+                launcher.stop();
+            }
 
-            /*
-            boolean launcherReady = launcher.update(controls.getLaunch());
+            if (controls.getPassthroughIn()) {
+                passthrough.in();
+            } else if (controls.getPassthroughOut()) {
+                passthrough.out();
+            } else {
+                passthrough.stop();
+            }
 
             telemetry.addData("Status", "Running");
-            telemetry.addData("Launcher", "%.0f ticks/s, ready=%b", launcher.getVelocity(), launcherReady);
-            telemetry.update(); */
+            telemetry.addData("Launcher", "%.0f ticks/s, ready=%b", launcher.getVelocity(), launcher.isReady());
+            telemetry.update();
         }
     }
 }
