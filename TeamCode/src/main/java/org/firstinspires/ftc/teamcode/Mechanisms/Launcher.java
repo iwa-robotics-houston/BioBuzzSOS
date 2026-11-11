@@ -7,10 +7,8 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 
-
- // Launcher mechanism: one motor driving the flywheel (closed-loop velocity control via
- // DcMotorEx).
-
+// Launcher mechanism: one motor driving the flywheel (closed-loop velocity control via
+// DcMotorEx).
 
 public class Launcher {
 
@@ -21,11 +19,12 @@ public class Launcher {
     public static final double TARGET_VELOCITY = 1250; // change velocity based on Desmos calcs
     public static final double MIN_VELOCITY = 1225; // ~2% band under target — tune on-robot
 
-    // Velocity for ejecting a jammed/misfed ball — doesn't need to be full launch speed,
-    // just enough to clear it. Tune on-robot.
-    public static final double SPIT_VELOCITY = -600;
+    // Velocity used to actively slow the flywheel down faster than it would coast on its
+    // own, by briefly spinning it the opposite direction. Tune: strong enough to slow it
+    // quickly, not so strong it's basically trying to spin up backwards.
+    public static final double REVERSE_VELOCITY = -400;
 
-    // PIDF tuned for a flywheel. Tune these .
+    // PIDF tuned for a flywheel. Tune these.
     public static final double P = 40;
     public static final double I = 0;
     public static final double D = 0;
@@ -67,6 +66,10 @@ public class Launcher {
         flywheel.setVelocity(TARGET_VELOCITY);
     }
 
+    /** Briefly spins the flywheel backward to slow it down faster than coasting would. */
+    public void reverse() {
+        flywheel.setVelocity(REVERSE_VELOCITY);
+    }
 
     public void stop() {
         flywheel.setVelocity(0);

@@ -22,6 +22,7 @@ public class Controls {
 
     // Launch Controls
     public boolean getLaunch()  { return gamepad1.right_trigger > 0.1; }
+    public boolean getSlowDown() { return gamepad1.right_bumper; }
 
     // Passthrough Controls
     public boolean getPassthroughIn()  { return gamepad1.a; }

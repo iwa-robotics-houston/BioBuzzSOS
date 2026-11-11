@@ -49,6 +49,8 @@ public class MainTeleOp extends LinearOpMode {
 
             if (controls.getLaunch()) {
                 launcher.spinUp();
+            } else if (controls.getSlowDown()) {
+                launcher.reverse();
             } else {
                 launcher.stop();
             }
