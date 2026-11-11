@@ -67,10 +67,6 @@ public class Launcher {
         flywheel.setVelocity(TARGET_VELOCITY);
     }
 
-    /** Reverses the flywheel to eject a jammed or misfed ball. */
-    public void spitOut() {
-        flywheel.setVelocity(SPIT_VELOCITY);
-    }
 
     public void stop() {
         flywheel.setVelocity(0);

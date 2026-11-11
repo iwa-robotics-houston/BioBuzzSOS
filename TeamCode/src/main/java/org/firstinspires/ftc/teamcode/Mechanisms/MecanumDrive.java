@@ -26,7 +26,7 @@ public class MecanumDrive {
         // sides & have to be reversed
 
         frontLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-        backRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        // 5backRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         /* RUN_USING_ENCODER uses the motor's built-in encoder to run closed-loop
         velocity control, which makes power output more consistent regardless of battery

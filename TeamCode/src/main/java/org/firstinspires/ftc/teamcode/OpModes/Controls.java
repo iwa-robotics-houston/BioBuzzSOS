@@ -26,4 +26,4 @@ public class Controls {
     // Passthrough Controls
     public boolean getPassthroughIn()  { return gamepad1.a; }
     public boolean getPassthroughOut() { return gamepad1.b; }
-}
+} // side intake wheels sping the opposit way they should
